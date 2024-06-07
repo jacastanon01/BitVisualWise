@@ -1,6 +1,6 @@
 # BitVisualWise
 
-Site built to help visualize various bitwise operations. This site was built with /By using bitwise operations, each bit of the integer can be checked, turned on (or turned off) easily and quickly.
+Site built to help visualize various bitwise operations. This site was built using bitwise operations, each bit of the integer can be checked, turned on (or turned off) easily and quickly.
 
 ## Inspiration
 
