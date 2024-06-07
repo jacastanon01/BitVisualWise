@@ -6,7 +6,12 @@ export interface IBitInputProps {
 
 function BitInputBox({ label, value, onChange }: IBitInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(parseInt(e.target.value, 10));
+    const parsed_value = parseInt(e.target.value, 10);
+    if (isNaN(parsed_value)) {
+      return;
+    }
+
+    onChange(parsed_value);
   };
 
   return (
@@ -14,6 +19,7 @@ function BitInputBox({ label, value, onChange }: IBitInputProps) {
       <label className='flex items-center space-x-2'>
         <span>{label}:</span>
         <input
+          min={0}
           type='number'
           value={value}
           onChange={handleChange}

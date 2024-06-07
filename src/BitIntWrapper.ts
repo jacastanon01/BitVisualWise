@@ -20,6 +20,14 @@ class BitIntWrapper {
     };
   }
 
+  toBinaryString(): string {
+    const binaryString = this.intValue.toString(2).padStart(32, '0');
+    const binaryGroups = binaryString.match(/.{1,4}/g) || [];
+    const filteredGroups = binaryGroups.filter((g) => g != '0000');
+    //   .slice(0, binaryGroups.length);
+    return filteredGroups.join(' ');
+  }
+
   getItem(i: number): number {
     return (this.intValue >> i) & 1;
   }

@@ -18,7 +18,7 @@ function BitInputs({ inputValues, setters, bits }: IBitInputsProps) {
   const { setValue, setOtherValue, setShiftAmount } = setters;
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+    <>
       <BitInputBox label='Value' value={value} onChange={setValue} />
       <BitDisplay label='Bits' bitWrapper={bit1} />
       <BitInputBox
@@ -32,7 +32,7 @@ function BitInputs({ inputValues, setters, bits }: IBitInputsProps) {
         value={shiftAmount}
         onChange={setShiftAmount}
       />
-    </div>
+    </>
   );
 }
 
