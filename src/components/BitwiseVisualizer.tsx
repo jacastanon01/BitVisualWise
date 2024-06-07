@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BitIntWrapper from '../BitIntWrapper';
+import BitDisplay from './BitDisplay';
 import BitInputs from './BitInputs';
-import OperationsGrid from './OperationsGrid';
 
 function BitwiseVisualizer() {
   const [value, setValue] = useState<number>(0);
@@ -37,7 +37,7 @@ function BitwiseVisualizer() {
     for (const [operation, result] of Object.entries(bitwiseResults)) {
       items.push(
         <article key={operation}>
-          <OperationsGrid operation={operation} bits={result} />
+          <BitDisplay operation={operation} bits={result} />
         </article>
       );
     }
@@ -45,9 +45,7 @@ function BitwiseVisualizer() {
   };
 
   return (
-    <div className='container mx-auto p-4'>
-      <h1 className='text-2xl font-bold mb-4'>Bitwise Visualizer</h1>
-
+    <>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <BitInputs
           inputValues={[value, otherValue, shiftAmount]}
@@ -61,7 +59,7 @@ function BitwiseVisualizer() {
           {[...generateBitResults()]}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

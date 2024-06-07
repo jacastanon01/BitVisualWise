@@ -2,7 +2,7 @@ import React from 'react';
 
 import BitIntWrapper from '../BitIntWrapper';
 import BitDisplay from './BitDisplay';
-import BitInputBox from './BitInputBox';
+import InputValue from './InputValue';
 
 interface IBitInputsProps {
   inputValues: number[];
@@ -10,21 +10,29 @@ interface IBitInputsProps {
 }
 
 function BitInputs({ inputValues: values, setters }: IBitInputsProps) {
-  const [bit1, bit2] = values.map((bit: number) => new BitIntWrapper(bit));
+  const [bit1, bit2] = values.map(
+    (bit: number) => new BitIntWrapper(bit).toBinaryString() || '0000'
+  );
   const [value, otherValue, shiftAmount] = values;
   const [setValue, setOtherValue, setShiftAmount] = setters;
 
   return (
     <>
-      <BitInputBox label='Value' value={value} onChange={setValue} />
-      <BitDisplay label='Bits' bitWrapper={bit1} />
-      <BitInputBox
+      <InputValue label='Value' value={value} onChange={setValue} />
+      <div>
+        <BitDisplay label='Bits' bits={bit1} />
+      </div>
+
+      <InputValue
         label='Other Value'
         value={otherValue}
         onChange={setOtherValue}
       />
-      <BitDisplay label='Other Bits' bitWrapper={bit2} />
-      <BitInputBox
+      <div>
+        <BitDisplay label='Other Bits' bits={bit2} />
+      </div>
+
+      <InputValue
         label='Shift Amount'
         value={shiftAmount}
         onChange={setShiftAmount}

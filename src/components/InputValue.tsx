@@ -4,7 +4,7 @@ export interface IBitInputProps {
   onChange: (value: number) => void;
 }
 
-function BitInputBox({ label, value, onChange }: IBitInputProps) {
+function InputValue({ label, value, onChange }: IBitInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const parsed_value = parseInt(e.target.value, 10);
     if (isNaN(parsed_value)) {
@@ -30,4 +30,4 @@ function BitInputBox({ label, value, onChange }: IBitInputProps) {
   );
 }
 
-export default BitInputBox;
+export default InputValue;
