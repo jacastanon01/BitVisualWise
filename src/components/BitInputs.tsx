@@ -5,17 +5,14 @@ import BitDisplay from './BitDisplay';
 import BitInputBox from './BitInputBox';
 
 interface IBitInputsProps {
-  inputValues: { [key: string]: number };
-  setters: {
-    [key: string]: React.Dispatch<React.SetStateAction<number>>;
-  };
-  bits: number[];
+  inputValues: number[];
+  setters: React.Dispatch<React.SetStateAction<number>>[];
 }
 
-function BitInputs({ inputValues, setters, bits }: IBitInputsProps) {
-  const [bit1, bit2] = bits.map((bit: number) => new BitIntWrapper(bit));
-  const { value, otherValue, shiftAmount } = inputValues;
-  const { setValue, setOtherValue, setShiftAmount } = setters;
+function BitInputs({ inputValues: values, setters }: IBitInputsProps) {
+  const [bit1, bit2] = values.map((bit: number) => new BitIntWrapper(bit));
+  const [value, otherValue, shiftAmount] = values;
+  const [setValue, setOtherValue, setShiftAmount] = setters;
 
   return (
     <>
