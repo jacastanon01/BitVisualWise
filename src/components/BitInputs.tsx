@@ -1,5 +1,7 @@
 import React from 'react';
+import { useAtom } from 'jotai';
 
+import atom_configs from '../atom_configs';
 import BitIntWrapper from '../BitIntWrapper';
 import BitDisplay from './BitDisplay';
 import InputValue from './InputValue';
@@ -34,3 +36,11 @@ function BitInputs({ inputValues: values, setters }: IBitInputsProps) {
 }
 
 export default BitInputs;
+
+function InputWrapper() {
+  const [value, setValue] = useAtom(atom_configs.valueAtom);
+  const [otherValue, setOtherValue] = useAtom(atom_configs.otherValueAtom);
+  const [shiftAmount, setShiftAmount] = useAtom(atom_configs.shiftAmountAtom);
+  const [operator, setOperator] = useAtom(atom_configs.operatorAtom);
+  const [activeInput, setActiveInput] = useAtom(atom_configs.activeInputAtom);
+}

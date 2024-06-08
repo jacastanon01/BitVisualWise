@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { atom } from 'jotai';
+
 import BitIntWrapper from '../BitIntWrapper';
 import BitDisplay from './BitDisplay';
 import BitInputs from './BitInputs';
