@@ -1,4 +1,5 @@
 import BitwiseVisualizer from './components/BitwiseVisualizer';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <div className='container p-4 mx-auto'>
         <h1 className='text-4xl text'></h1>
         <BitwiseVisualizer />
+        <Footer />
       </div>
     </main>
   );
