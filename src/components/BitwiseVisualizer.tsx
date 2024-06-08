@@ -2,6 +2,7 @@ import { useState } from 'react';
 import BitIntWrapper from '../BitIntWrapper';
 import BitDisplay from './BitDisplay';
 import BitInputs from './BitInputs';
+import InputValue from './InputValue';
 
 function BitwiseVisualizer() {
   const [value, setValue] = useState<number>(0);
@@ -55,9 +56,16 @@ function BitwiseVisualizer() {
 
       <div className='mt-4'>
         <h2 className='text-xl font-semibold mb-2'>Operations</h2>
-        <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+        <section className='my-4'>
+          <InputValue
+            label='Shift by'
+            value={shiftAmount}
+            onChange={setShiftAmount}
+          />
+        </section>
+        <section className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           {[...generateBitResults()]}
-        </div>
+        </section>
       </div>
     </>
   );

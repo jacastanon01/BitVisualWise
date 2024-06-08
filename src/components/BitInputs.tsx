@@ -13,8 +13,8 @@ function BitInputs({ inputValues: values, setters }: IBitInputsProps) {
   const [bit1, bit2] = values.map(
     (bit: number) => new BitIntWrapper(bit).toBinaryString() || '0000'
   );
-  const [value, otherValue, shiftAmount] = values;
-  const [setValue, setOtherValue, setShiftAmount] = setters;
+  const [value, otherValue] = values;
+  const [setValue, setOtherValue] = setters;
 
   return (
     <>
