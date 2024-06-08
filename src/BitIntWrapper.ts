@@ -33,6 +33,10 @@ class BitIntWrapper {
     return (this.intValue >> i) & 1;
   }
 
+  toInt(): number {
+    return this.intValue;
+  }
+
   bitLength(): number {
     return Math.floor(Math.log2(this.intValue) + 1);
   }

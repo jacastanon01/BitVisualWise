@@ -5,6 +5,8 @@
 :root {
   font-family: 'Ubuntu Mono', 'monospace', 'Inter';
   --primary-color: rgba();
+  background-color: #2d2d2d;
+  color: #eee;
 }
 
 .bits {

@@ -20,7 +20,7 @@ function BitDisplay({
   return (
     <>
       <h3 className='text-lg font-medium'>{label || ''}</h3>
-      <div className='p-2 bg-gray-100 rounded'>Bits: {bits}</div>
+      <div className='p-2 bg-gray-100 rounded bits'>{bits}</div>
     </>
   );
 }
