@@ -18,25 +18,17 @@ function BitInputs({ inputValues: values, setters }: IBitInputsProps) {
 
   return (
     <>
-      <InputValue label='Value' value={value} onChange={setValue} />
-      <div>
-        <BitDisplay label='Bits' bits={bit1} />
-      </div>
+      <section className='flex flex-col items-center'>
+        <InputValue value={value} onChange={setValue} />
+        <BitDisplay bits={bit1} />
+      </section>
 
-      <InputValue
-        label='Other Value'
-        value={otherValue}
-        onChange={setOtherValue}
-      />
-      <div>
-        <BitDisplay label='Other Bits' bits={bit2} />
-      </div>
+      <section className='flex flex-col items-center'>
+        <InputValue value={otherValue} onChange={setOtherValue} />
+        <BitDisplay bits={bit2} />
+      </section>
 
-      <InputValue
-        label='Shift Amount'
-        value={shiftAmount}
-        onChange={setShiftAmount}
-      />
+      {/* <InputValue value={shiftAmount} onChange={setShiftAmount} /> */}
     </>
   );
 }

@@ -46,7 +46,7 @@ function BitwiseVisualizer() {
 
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
         <BitInputs
           inputValues={[value, otherValue, shiftAmount]}
           setters={[setValue, setOtherValue, setShiftAmount]}
@@ -55,7 +55,7 @@ function BitwiseVisualizer() {
 
       <div className='mt-4'>
         <h2 className='text-xl font-semibold mb-2'>Operations</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           {[...generateBitResults()]}
         </div>
       </div>
