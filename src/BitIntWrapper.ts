@@ -26,7 +26,8 @@ class BitIntWrapper {
     const firstNonZeroIdx = binaryGroups.findIndex((g) => g != '0000');
     //   .slice(0, binaryGroups.length);
 
-    return binaryGroups.slice(firstNonZeroIdx).join(' ');
+    const binaryResult = binaryGroups.slice(firstNonZeroIdx).join(' ');
+    return binaryResult || '0000';
   }
 
   getItem(i: number): number {
@@ -67,3 +68,9 @@ class BitIntWrapper {
 }
 
 export default BitIntWrapper;
+
+export const createBitWrapper = (value: number): BitIntWrapper => {
+  return new BitIntWrapper(value);
+};
+
+const get;

@@ -22,53 +22,48 @@ function BitwiseVisualizer() {
   const xorResult = bitWrapper.xor(otherBitWrapper).toBinaryString() || '0000';
   const notResult = bitWrapper.not().toBinaryString() || '0000';
 
-  const bitshiftResults = {
+  const bitwiseResults = {
     L: shiftedLeft,
     R: shiftedRight,
-  };
-
-  const bitwiseResults = {
-    ...bitshiftResults,
     OR: orResult,
     AND: andResult,
     XOR: xorResult,
     NOT: notResult,
   };
 
-  const generateBitResults = () => {
-    const items = [];
-    for (const [operation, result] of Object.entries(bitwiseResults)) {
-      items.push(
-        <article key={operation}>
-          <BitDisplay operation={operation} bits={result} />
-        </article>
-      );
-    }
-    return items;
-  };
+  return bitwiseResults;
+
+  // const generateBitResults = () => {
+  //   const items = [];
+  //   for (const [operation, result] of Object.entries(bitwiseResults)) {
+  //     items.push(
+  //       <article key={operation}>
+  //         <BitDisplay operation={operation} bits={result} />
+  //       </article>
+  //     );
+  //   }
+  //   return items;
+  // };
 
   return (
     <>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-        <BitInputs
-          inputValues={[value, otherValue, shiftAmount]}
-          setters={[setValue, setOtherValue, setShiftAmount]}
-        />
+        <BitInputs />
       </div>
 
-      <div className='mt-4'>
+      {/* <div className='mt-4'>
         <h2 className='text-xl font-semibold mb-2'>Operations</h2>
         <section className='my-4'>
           <InputValue
-            label='Shift by'
+            name='Shift by'
             value={shiftAmount}
             onChange={setShiftAmount}
           />
         </section>
         <section className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-          {[...generateBitResults()]}
+         {[...generateBitResults()]}
         </section>
-      </div>
+      </div> */}
     </>
   );
 }

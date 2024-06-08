@@ -1,26 +1,10 @@
-function BitDisplay({
-  label,
-  operation,
-  bits,
-}: {
-  label?: string;
-  operation?: string;
-  bits: string;
-}) {
-  if (operation) {
-    if (operation == 'L') {
-      label = 'Left Shift';
-    } else if (operation == 'R') {
-      label = 'Right Shift';
-    } else {
-      label = operation?.toUpperCase();
-    }
-  }
+import BitIntWrapper from '../BitIntWrapper';
 
+function BitDisplay({ value_to_convert }: { value_to_convert: number }) {
+  const bitString = new BitIntWrapper(value_to_convert).toBinaryString();
   return (
     <>
-      <h3 className='text-lg font-medium'>{label || ''}</h3>
-      <div className='p-2 bg-gray-100 rounded bits'>{bits}</div>
+      <div className='p-2 bg-gray-100 rounded'>{bitString}</div>
     </>
   );
 }
