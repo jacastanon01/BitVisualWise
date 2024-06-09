@@ -9,7 +9,6 @@ function OperationButtons() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const key = e.currentTarget.name as keyof typeof BitOperationSymbols;
     setOperator(BitOperationSymbols[key]);
-    // console.log(operator, e.currentTarget.name);
   };
 
   const generateButtons = (): Array<JSX.Element> => {
@@ -19,7 +18,7 @@ function OperationButtons() {
         <button
           name={key}
           onClick={handleClick}
-          key={symbol}
+          key={key}
           className={`rounded shadow-md  px-2 py-1 text-xl md:text-3xl ${
             operator == symbol
               ? 'text-shellgreen scale-95 backdrop-opacity-20'
@@ -32,6 +31,7 @@ function OperationButtons() {
     }
     return buttonStack.map((element: JSX.Element) => <>{element}</>);
   };
+
   return (
     <div className='w-full flex flex-shrink-0 justify-center items-center gap-4'>
       {generateButtons()}
