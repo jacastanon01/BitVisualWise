@@ -1,9 +1,5 @@
 import React from 'react';
-import { useAtom } from 'jotai';
 
-import atom_configs from '../atom_configs';
-import BitIntWrapper from '../BitIntWrapper';
-import BitDisplay from './BitDisplay';
 import InputValue from './InputValue';
 
 interface IBitInputsProps {

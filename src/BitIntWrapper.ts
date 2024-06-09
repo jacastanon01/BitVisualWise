@@ -64,8 +64,8 @@ class BitIntWrapper {
     return new BitIntWrapper(this.intValue ^ other.intValue);
   }
 
-  not(): BitIntWrapper {
-    return new BitIntWrapper(~this.intValue & 0xffffff);
+  signedBit(): BitIntWrapper {
+    return new BitIntWrapper((~this.intValue & 0xffffff) + 1);
   }
 }
 
