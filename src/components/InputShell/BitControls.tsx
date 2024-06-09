@@ -1,20 +1,20 @@
-import InputValue from '../InputValue';
+import InputWrapper from '../InputValue';
 import OperationButtons from './OperationButtons';
 
 function BitControls() {
   return (
     <>
       <section className=''>
-        <InputValue name='value' />
+        <InputWrapper name='value' />
         {/* <BitDisplay value_to_convert={bit1} /> */}
       </section>
 
-      <section className=''>
+      <section className='max-md:order-first'>
         <OperationButtons />
       </section>
 
       <section className=''>
-        <InputValue name='otherValue' />
+        <InputWrapper name='otherValue' />
       </section>
     </>
   );

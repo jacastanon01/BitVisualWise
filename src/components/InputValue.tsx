@@ -8,7 +8,7 @@ export interface IBitInputProps {
   name: 'value' | 'otherValue';
 }
 
-function InputValue({ name }: IBitInputProps) {
+function InputWrapper({ name }: IBitInputProps) {
   const [activeInput, setActiveInput] = useAtom(atomConfigs.activeInputAtom);
   const [valueAtom, setValueAtom] = useAtom(atomConfigs.valueAtom);
   const [otherValueAtom, setOtherValueAtom] = useAtom(
@@ -63,4 +63,4 @@ function InputValue({ name }: IBitInputProps) {
   );
 }
 
-export default InputValue;
+export default InputWrapper;
