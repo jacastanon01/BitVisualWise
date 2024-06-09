@@ -1,4 +1,4 @@
-import InputShell from './InputShell';
+import InputShell from './InputShell/InputShell';
 
 function BitwiseVisualizer() {
   return (

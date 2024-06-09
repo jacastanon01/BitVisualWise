@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+
 import BitIntWrapper, { createBitWrapper } from '../BitIntWrapper';
 import atomConfigs from '../atomConfigs';
 import BitDisplay from './BitDisplay';
@@ -13,13 +14,13 @@ function InputValue({ name }: IBitInputProps) {
   const [otherValueAtom, setOtherValueAtom] = useAtom(
     atomConfigs.otherValueAtom
   );
-
+  console.log({ valueAtom });
   let atomValue: BitIntWrapper | number | null =
     name == 'value' ? valueAtom : otherValueAtom;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const parsedValue = parseInt(e.target.value, 10);
-    console.log(parsedValue);
+
     if (!isNaN(parsedValue) && activeInput == name) {
       const bitWrapperObj = createBitWrapper(parsedValue);
       if (name == 'value') {
@@ -29,8 +30,6 @@ function InputValue({ name }: IBitInputProps) {
         setOtherValueAtom(bitWrapperObj);
       }
     }
-    console.log(valueAtom?.toBinaryString());
-    console.log(valueAtom?.toInt());
   };
 
   const handleFocus = () => setActiveInput(name);

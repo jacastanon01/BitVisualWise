@@ -11,7 +11,7 @@ function OperationButtons() {
     setOperator(BitOperationSymbols[key]);
   };
   return (
-    <div className='w-full h-52 bg-slate-400 flex flex-wrap space-x-2 justify-center items-center gap-4'>
+    <div className='w-full flex flex-wrap space-x-2 justify-center items-center gap-4'>
       {Object.values(BitOperationSymbols).map((symbol: string) => (
         <button
           name={symbol}

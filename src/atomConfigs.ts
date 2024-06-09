@@ -3,8 +3,8 @@ import { atom } from 'jotai';
 import { BitOperationSymbols } from '../types/index.ts';
 import BitIntWrapper, { performBitOperation } from './BitIntWrapper.ts';
 
-const valueAtom = atom<BitIntWrapper | null>(null);
-const otherValueAtom = atom<BitIntWrapper | null>(null);
+const valueAtom = atom<BitIntWrapper>(new BitIntWrapper(0));
+const otherValueAtom = atom<BitIntWrapper>(new BitIntWrapper(0));
 const resultAtom = atom(0);
 
 const operatorAtom = atom<BitOperationSymbols | null>(BitOperationSymbols.AND);
@@ -12,16 +12,6 @@ const operatorAtom = atom<BitOperationSymbols | null>(BitOperationSymbols.AND);
 const activeInputAtom = atom<null | 'value' | 'otherValue' | 'shiftAmount'>(
   null
 );
-
-function updateResultState(
-  operator: BitOperationSymbols,
-  value1: number,
-  value2: number,
-  set: (atom: any, result: number) => void,
-  baseAtom: any
-) {
-  // const result = performBitOperation();
-}
 
 function createResultsAtom() {
   const baseAtom = atom(0);
