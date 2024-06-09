@@ -1,4 +1,4 @@
-import InputWrapper from '../InputValue';
+import InputWrapper from '../InputWrapper';
 import OperationButtons from './OperationButtons';
 
 const BitControls = () => (
