@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai';
 import React from 'react';
 
-import { BitOperationSymbols } from '../../types';
-import atom_configs from '../atomConfigs';
+import { BitOperationSymbols } from '../../../types';
+import atom_configs from '../../atomConfigs';
 
 function OperationButtons() {
   const [operator, setOperator] = useAtom(atom_configs.operatorAtom);

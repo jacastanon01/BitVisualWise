@@ -1,5 +1,5 @@
 import InputValue from '../InputValue';
-import OperationButtons from '../OperationButtons';
+import OperationButtons from './OperationButtons';
 
 function BitControls() {
   return (
