@@ -7,7 +7,7 @@ const BitDisplay = ({
 }) => (
   <>
     <div className='p-2 w-full rounded'>
-      {valueToConvert ? valueToConvert.toBinaryString() : '0000'}
+      {valueToConvert && valueToConvert.toBinaryString()}
     </div>
   </>
 );

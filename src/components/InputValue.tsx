@@ -42,6 +42,8 @@ function InputValue({ name }: IBitInputProps) {
       <label onClick={handleFocus} className='flex items-center space-x-2'>
         {activeInput == name ? (
           <input
+            min={-127}
+            max={128}
             onClick={handleFocus}
             onBlur={handleBlur}
             type='number'

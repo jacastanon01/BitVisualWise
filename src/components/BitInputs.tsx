@@ -1,4 +1,5 @@
 import InputValue from './InputValue';
+import OperationButtons from './OperationButtons';
 
 function BitInputs() {
   return (
@@ -7,6 +8,8 @@ function BitInputs() {
         <InputValue name='value' />
         {/* <BitDisplay value_to_convert={bit1} /> */}
       </section>
+
+      <OperationButtons />
 
       <section className='flex flex-col items-center'>
         <InputValue name='otherValue' />

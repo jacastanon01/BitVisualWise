@@ -23,13 +23,13 @@ class BitIntWrapper {
   }
 
   toBinaryString(): string {
-    const binaryString = this.intValue.toString(2).padStart(32, '0');
-    const binaryGroups = binaryString.match(/.{1,4}/g) || [];
-    const firstNonZeroIdx = binaryGroups.findIndex((g) => g != '0000');
-    //   .slice(0, binaryGroups.length);
-
-    const binaryResult = binaryGroups.slice(firstNonZeroIdx).join(' ');
-    return binaryResult || '0000';
+    const binaryGroups =
+      this.intValue
+        .toString(2)
+        .padStart(8, '0')
+        .match(/.{1,4}/g) || [];
+    const binaryResult = binaryGroups.join(' ');
+    return binaryResult || '0000 0000';
   }
 
   getItem(i: number): number {
