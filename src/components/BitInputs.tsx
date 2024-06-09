@@ -1,11 +1,4 @@
-import React from 'react';
-
 import InputValue from './InputValue';
-
-interface IBitInputsProps {
-  inputValues: number[];
-  setters: React.Dispatch<React.SetStateAction<number>>[];
-}
 
 function BitInputs() {
   return (
