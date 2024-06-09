@@ -3,10 +3,7 @@ import { useAtom } from 'jotai';
 import atomConfigs from '../lib/atomConfigs';
 import BitIntWrapper, { createBitWrapper } from '../lib/BitIntWrapper';
 import BitDisplay from './BitDisplay';
-
-export interface IBitInputProps {
-  name: 'value' | 'otherValue';
-}
+import { IBitInputProps } from '../../types';
 
 function InputWrapper({ name }: IBitInputProps) {
   const [activeInput, setActiveInput] = useAtom(atomConfigs.activeInputAtom);
