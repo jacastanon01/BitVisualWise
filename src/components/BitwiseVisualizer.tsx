@@ -14,24 +14,22 @@ function BitwiseVisualizer() {
   const bitWrapper = new BitIntWrapper(value);
   const otherBitWrapper = new BitIntWrapper(otherValue);
 
-  const shiftedLeft = bitWrapper.lshift(shiftAmount).toBinaryString() || '0000';
-  const shiftedRight =
-    bitWrapper.rshift(shiftAmount).toBinaryString() || '0000';
+  // const shiftedLeft = bitWrapper.lshift(shiftAmount).toBinaryString() || '0000';
+  // const shiftedRight =
+  //   bitWrapper.rshift(shiftAmount).toBinaryString() || '0000';
   const orResult = bitWrapper.or(otherBitWrapper).toBinaryString() || '0000';
   const andResult = bitWrapper.and(otherBitWrapper).toBinaryString() || '0000';
   const xorResult = bitWrapper.xor(otherBitWrapper).toBinaryString() || '0000';
   const notResult = bitWrapper.not().toBinaryString() || '0000';
 
-  const bitwiseResults = {
-    L: shiftedLeft,
-    R: shiftedRight,
-    OR: orResult,
-    AND: andResult,
-    XOR: xorResult,
-    NOT: notResult,
-  };
-
-  return bitwiseResults;
+  // const bitwiseResults = {
+  //   L: shiftedLeft,
+  //   R: shiftedRight,
+  //   OR: orResult,
+  //   AND: andResult,
+  //   XOR: xorResult,
+  //   NOT: notResult,
+  // };
 
   // const generateBitResults = () => {
   //   const items = [];

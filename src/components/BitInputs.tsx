@@ -30,11 +30,3 @@ function BitInputs() {
 }
 
 export default BitInputs;
-
-function InputWrapper() {
-  const [value, setValue] = useAtom(atom_configs.valueAtom);
-  const [otherValue, setOtherValue] = useAtom(atom_configs.otherValueAtom);
-  const [shiftAmount, setShiftAmount] = useAtom(atom_configs.shiftAmountAtom);
-  const [operator, setOperator] = useAtom(atom_configs.operatorAtom);
-  const [activeInput, setActiveInput] = useAtom(atom_configs.activeInputAtom);
-}

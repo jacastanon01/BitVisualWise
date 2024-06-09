@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+import BitIntWrapper, { createBitWrapper } from '../BitIntWrapper';
 import atom_configs from '../atom_configs';
 import BitDisplay from './BitDisplay';
 
@@ -12,16 +13,19 @@ function InputValue({ name }: IBitInputProps) {
   const [otherValueAtom, setOtherValueAtom] = useAtom(
     atom_configs.otherValueAtom
   );
-  const atomValue = name == 'value' ? valueAtom : otherValueAtom;
+
+  let atomValue: BitIntWrapper | number | null =
+    name == 'value' ? valueAtom : otherValueAtom;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const parsed_value = parseInt(e.target.value, 10);
     if (!isNaN(parsed_value) && activeInput == name) {
+      const bit_obj = createBitWrapper(parsed_value);
       if (name == 'value') {
-        setValueAtom(parsed_value);
+        setValueAtom(bit_obj);
       }
       if (name == 'otherValue') {
-        setOtherValueAtom(parsed_value);
+        setOtherValueAtom(bit_obj);
       }
     }
   };
@@ -44,7 +48,7 @@ function InputValue({ name }: IBitInputProps) {
             onBlur={handleBlur}
             min={0}
             type='number'
-            value={atomValue}
+            value={atomValue ? atomValue.toInt() : 0}
             onChange={handleChange}
             className='text-shellbg ring-neutral-500 border-none p-2 rounded focus:outline-none focus:border'
           />

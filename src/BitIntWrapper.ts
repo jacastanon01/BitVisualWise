@@ -1,3 +1,5 @@
+import { BitOperationSymbols } from '../types';
+
 class BitIntWrapper {
   private intValue: number;
 
@@ -42,12 +44,12 @@ class BitIntWrapper {
     return Math.floor(Math.log2(this.intValue) + 1);
   }
 
-  lshift(other: number): BitIntWrapper {
-    return new BitIntWrapper(this.intValue << other);
+  lshift(other: BitIntWrapper): BitIntWrapper {
+    return new BitIntWrapper(this.intValue << other.intValue);
   }
 
-  rshift(other: number): BitIntWrapper {
-    return new BitIntWrapper(this.intValue >> other);
+  rshift(other: BitIntWrapper): BitIntWrapper {
+    return new BitIntWrapper(this.intValue >> other.intValue);
   }
 
   or(other: BitIntWrapper): BitIntWrapper {
@@ -69,8 +71,28 @@ class BitIntWrapper {
 
 export default BitIntWrapper;
 
-export const createBitWrapper = (value: number): BitIntWrapper => {
-  return new BitIntWrapper(value);
-};
+export const createBitWrapper = (value: number): BitIntWrapper =>
+  new BitIntWrapper(value);
 
-const get;
+export function performBitOperation(
+  operator: BitOperationSymbols,
+  value1: BitIntWrapper,
+  value2: BitIntWrapper
+): BitIntWrapper {
+  switch (operator) {
+    case BitOperationSymbols.L:
+      return value1.lshift(value2);
+    case BitOperationSymbols.R:
+      return value1.rshift(value2);
+    case BitOperationSymbols.AND:
+      return value1.and(value2);
+    case BitOperationSymbols.OR:
+      return value1.or(value2);
+    case BitOperationSymbols.XOR:
+      return value1.xor(value2);
+    // case BitOperationSymbols.NOT:
+    //   return value1.not()
+    default:
+      throw new Error('Invalid operator');
+  }
+}
