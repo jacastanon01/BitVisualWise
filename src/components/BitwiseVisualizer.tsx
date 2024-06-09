@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { atom } from 'jotai';
 
+import { BitOperationSymbols } from '../../types';
 import BitIntWrapper from '../BitIntWrapper';
-import BitDisplay from './BitDisplay';
-import BitInputs from './BitInputs';
-import InputValue from './InputValue';
+import InputShell from './InputShell';
+import OperationButtons from './OperationButtons';
 
 function BitwiseVisualizer() {
   const [value, setValue] = useState<number>(0);
@@ -45,9 +44,18 @@ function BitwiseVisualizer() {
 
   return (
     <>
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+      {/* <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
         <BitInputs />
-      </div>
+      </div> */}
+
+      <p className='mx-auto font-semibold h-32  text-neutral-500 font-mono leading-normal mb-4 md:w-1/2'>
+        Welcome to BitVisualWiser! Select an operation to perform on two
+        integers and watch the bits shift in realtime!
+      </p>
+
+      <OperationButtons />
+
+      <InputShell />
 
       {/* <div className='mt-4'>
         <h2 className='text-xl font-semibold mb-2'>Operations</h2>

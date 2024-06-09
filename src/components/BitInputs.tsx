@@ -14,7 +14,7 @@ interface IBitInputsProps {
 function BitInputs() {
   return (
     <>
-      <section className='flex flex-col items-center'>
+      <section className='w-full '>
         <InputValue name='value' />
         {/* <BitDisplay value_to_convert={bit1} /> */}
       </section>
