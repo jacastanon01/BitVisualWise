@@ -37,23 +37,28 @@ function InputValue({ name }: IBitInputProps) {
   const handleBlur = () => setActiveInput(null);
 
   return (
-    <div className='w-full flex flex-col space-y-2 mt-4'>
-      <label onClick={handleFocus} className='flex items-center space-x-2'>
+    <div className=' md:max-w-48'>
+      <div onClick={handleFocus} className='flex items-center'>
         {activeInput == name ? (
-          <input
-            min={-127}
-            max={128}
-            onClick={handleFocus}
-            onBlur={handleBlur}
-            type='number'
-            value={atomValue instanceof BitIntWrapper ? atomValue.toInt() : 0}
-            onChange={handleChange}
-            className='text-shellbg ring-neutral-500 border-none p-2 rounded bits focus:outline-none focus:border'
-          />
+          <label htmlFor={name}>
+            <input
+              name={name}
+              min={-127}
+              max={128}
+              onClick={handleFocus}
+              onBlur={handleBlur}
+              type='number'
+              value={atomValue instanceof BitIntWrapper ? atomValue.toInt() : 0}
+              onChange={handleChange}
+              className='text-shellbg w-full border-none rounded bits focus:outline-none focus:border'
+            />
+          </label>
         ) : (
-          <BitDisplay valueToConvert={atomValue} />
+          <div>
+            <BitDisplay valueToConvert={atomValue} />
+          </div>
         )}
-      </label>
+      </div>
     </div>
   );
 }
