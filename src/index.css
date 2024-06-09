@@ -14,6 +14,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+input {
+  border: 0;
+  outline: 0;
+}
+
 .bits {
   background-color: theme('colors.shellbg');
   color: theme('colors.shellgreen');

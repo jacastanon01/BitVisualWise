@@ -39,7 +39,7 @@ function InputValue({ name }: IBitInputProps) {
   }
 
   return (
-    <div className='flex flex-col space-y-2'>
+    <div className='w-full flex flex-col space-y-2 mt-4'>
       <label onClick={handleFocus} className='flex items-center space-x-2'>
         {activeInput == name ? (
           // {name && <span>{name}:</span>}
@@ -50,7 +50,7 @@ function InputValue({ name }: IBitInputProps) {
             type='number'
             value={atomValue ? atomValue.toInt() : 0}
             onChange={handleChange}
-            className='text-shellbg ring-neutral-500 border-none p-2 rounded focus:outline-none focus:border'
+            className='text-shellbg ring-neutral-500 border-none p-2 rounded bits focus:outline-none focus:border'
           />
         ) : (
           <BitDisplay value_to_convert={atomValue} />
