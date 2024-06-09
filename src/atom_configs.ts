@@ -23,22 +23,20 @@ function updateResultState(
   // const result = performBitOperation();
 }
 
-function createResultsAtom(initialValue: number) {
-  const baseAtom = atom(initialValue);
+function createResultsAtom() {
+  const baseAtom = atom(0);
   const resultAtom = atom((get) => get(baseAtom));
   const calculateResult = atom(null, (get, set) => {
     const value1 = get(valueAtom);
     const value2 = get(otherValueAtom);
-    const operator = get(operatorAtom);
+    const operator = get(operatorAtom) ?? BitOperationSymbols.AND;
 
-    switch (operator) {
-      case BitOperationSymbols.L:
-        set(baseAtom, value1 << value2);
-      case BitOperationSymbols.AND:
-        set(baseAtom, value1 & value2);
-      default:
-        break;
+    if (!value1 || !value2) {
+      return;
     }
+
+    const result = performBitOperation(operator, value1, value2);
+    set(baseAtom, result.toInt());
   });
 
   return [resultAtom, calculateResult];
@@ -50,4 +48,5 @@ export default {
   resultAtom,
   operatorAtom,
   activeInputAtom,
+  createResultsAtom,
 };

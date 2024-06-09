@@ -18,14 +18,14 @@ function InputValue({ name }: IBitInputProps) {
     name == 'value' ? valueAtom : otherValueAtom;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const parsed_value = parseInt(e.target.value, 10);
-    if (!isNaN(parsed_value) && activeInput == name) {
-      const bit_obj = createBitWrapper(parsed_value);
+    const parsedValue = parseInt(e.target.value, 10);
+    if (!isNaN(parsedValue) && activeInput == name) {
+      const bitWrapperObj = createBitWrapper(parsedValue);
       if (name == 'value') {
-        setValueAtom(bit_obj);
+        setValueAtom(bitWrapperObj);
       }
       if (name == 'otherValue') {
-        setOtherValueAtom(bit_obj);
+        setOtherValueAtom(bitWrapperObj);
       }
     }
   };
