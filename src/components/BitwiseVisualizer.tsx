@@ -7,7 +7,6 @@ const BitwiseVisualizer = () => (
         Bit<span className=' text-shellbg'>Visual</span>Wiser
       </h1>
       <p className='text-xl text-center font-light leading-normal whitespace-pre text-wrap'>
-        An interactive bitwise visualizer.
         {'\n'}A place to learn simple binary arithmatic and become a bit
         wiser...
       </p>

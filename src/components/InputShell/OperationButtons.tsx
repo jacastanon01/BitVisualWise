@@ -34,7 +34,7 @@ function OperationButtons() {
   };
 
   return (
-    <div className='mt-8 flex justify-center items-center gap-2'>
+    <div className='flex justify-center items-center gap-2'>
       {generateButtons()}
     </div>
   );
