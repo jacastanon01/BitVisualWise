@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 
-import { BitOperationSymbols, IBitInputProps } from '../../types/index.ts';
+import { BitOperationSymbols, IBitInputProps } from 'types/index.ts';
 import BitIntWrapper, { performBitOperation } from './BitIntWrapper.ts';
 
 const valueAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));

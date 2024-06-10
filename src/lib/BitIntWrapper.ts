@@ -1,4 +1,4 @@
-import { BitOperationSymbols } from '../../types';
+import { BitOperationSymbols } from 'types';
 
 class BitIntWrapper {
   private intValue: number;

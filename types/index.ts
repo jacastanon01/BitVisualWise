@@ -12,6 +12,6 @@ export interface IBitInputProps {
   name: 'value' | 'otherValue';
 }
 
-export interface IBitDisplayProps {
+export interface IByteDisplayProps {
   valueToConvert: BitIntWrapper | null;
 }
