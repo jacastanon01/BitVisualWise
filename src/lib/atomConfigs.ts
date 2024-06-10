@@ -1,17 +1,27 @@
 import { atom } from 'jotai';
 
-import { BitOperationSymbols } from '../../types/index.ts';
+import { BitOperationSymbols, IBitInputProps } from '../../types/index.ts';
 import BitIntWrapper, { performBitOperation } from './BitIntWrapper.ts';
 
-const valueAtom = atom<BitIntWrapper>(new BitIntWrapper(0));
-const otherValueAtom = atom<BitIntWrapper>(new BitIntWrapper(0));
+const valueAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));
+const otherValueAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));
 const resultAtom = atom(0);
 
 const operatorAtom = atom<BitOperationSymbols | null>(BitOperationSymbols.AND);
 
-const activeInputAtom = atom<null | 'value' | 'otherValue' | 'shiftAmount'>(
-  null
-);
+const activeInputAtom = atom<IBitInputProps | null>(null);
+
+// function setActiveInputValues() {
+//   const activeInput = atom(activeInputAtom);
+//   if (activeInput?.name === name) {
+//     if (name === 'value') {
+//       setValueAtom(null);
+//       console.log({ valueAtom });
+//     } else {
+//       setOtherValueAtom(null);
+//     }
+//   }
+// }
 
 function createResultsAtom() {
   const baseAtom = atom(0);

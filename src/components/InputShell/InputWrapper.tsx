@@ -11,41 +11,58 @@ function InputWrapper({ name }: IBitInputProps) {
   const [otherValueAtom, setOtherValueAtom] = useAtom(
     atomConfigs.otherValueAtom
   );
-  console.log({ valueAtom });
+
   let atomValue: BitIntWrapper | number | null =
     name == 'value' ? valueAtom : otherValueAtom;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const parsedValue = parseInt(e.target.value, 10);
-
-    if (!isNaN(parsedValue) && activeInput == name) {
-      const bitWrapperObj = createBitWrapper(parsedValue);
-      if (name == 'value') {
-        setValueAtom(bitWrapperObj);
+    const newValue = e.target.value.trim();
+    console.log({ newValue });
+    if (newValue === '') {
+      if (activeInput?.name === name) {
+        if (name === 'value') {
+          setValueAtom(null);
+        } else {
+          setOtherValueAtom(null);
+        }
       }
-      if (name == 'otherValue') {
-        setOtherValueAtom(bitWrapperObj);
+    } else {
+      const parsedValue = parseInt(newValue, 10);
+
+      if (!isNaN(parsedValue) && activeInput?.name == name) {
+        const bitWrapperObj = createBitWrapper(parsedValue);
+        if (name == 'value') {
+          setValueAtom(bitWrapperObj);
+        }
+        if (name == 'otherValue') {
+          setOtherValueAtom(bitWrapperObj);
+        }
       }
     }
   };
 
-  const handleFocus = () => setActiveInput(name);
+  const handleFocus = () => setActiveInput({ name });
 
   const handleBlur = () => setActiveInput(null);
 
   return (
     <div className=' md:max-w-48'>
       <div onClick={handleFocus} className='flex items-center'>
-        {activeInput == name ? (
+        {activeInput?.name == name ? (
           <label htmlFor={name}>
             <input
+              onKeyUp={(e) => console.log(e.key)}
               name={name}
               min={-127}
               max={128}
               onClick={handleFocus}
               onBlur={handleBlur}
-              type='number'
-              value={atomValue instanceof BitIntWrapper ? atomValue.toInt() : 0}
+              type='text'
+              value={
+                atomValue instanceof BitIntWrapper
+                  ? atomValue.toInt()
+                  : createBitWrapper(0).toInt()
+              }
               onChange={handleChange}
               className='text-shellbg pr-0 w-full border-none rounded bits focus:outline-none focus:border'
             />

@@ -13,5 +13,5 @@ export interface IBitInputProps {
 }
 
 export interface IBitDisplayProps {
-  valueToConvert: BitIntWrapper;
+  valueToConvert: BitIntWrapper | null;
 }
