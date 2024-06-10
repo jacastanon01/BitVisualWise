@@ -16,16 +16,15 @@ function OperationButtons() {
     for (const [key, symbol] of Object.entries(BitOperationSymbols)) {
       buttonStack.push(
         <button
-          name={key}
           onClick={handleClick}
-          key={key}
-          className={`rounded shadow-md  px-2 py-1 text-xl md:text-3xl ${
+          name={key}
+          className={`fixed-btn bg-transparent border-0 rounded px-2 py-1 ${
             operator == symbol
-              ? 'text-shellgreen scale-95 backdrop-opacity-20'
-              : 'text-white shadow-neutral-600 shadow-sm hover:opacity-80 hover:scale-105'
+              ? 'text-shellgreen backdrop-opacity-20 cursor-default'
+              : 'text-white shadow-neutral-600 text-xl md:text-3xl shadow-md hover:opacity-80 hover:font-bold'
           }`}
         >
-          {symbol}
+          {operator == symbol ? key : symbol}
         </button>
       );
     }
@@ -33,7 +32,7 @@ function OperationButtons() {
   };
 
   return (
-    <div className='w-full flex flex-shrink-0 justify-center items-center gap-4'>
+    <div className='mt-8 flex justify-center items-center gap-2'>
       {generateButtons()}
     </div>
   );

@@ -21,6 +21,12 @@ input {
 
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
@@ -29,9 +35,20 @@ input[type='number'] {
   appearance: none;
 }
 
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 .bits {
   background-color: theme('colors.shellbg');
   color: theme('colors.shellgreen');
   line-height: 1.5;
   letter-spacing: 0.2rem;
+}
+
+.fixed-btn {
+  flex: 0 0 50px;
+  margin: 0.5rem;
 }

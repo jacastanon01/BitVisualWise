@@ -1,9 +1,9 @@
 import { useAtom } from 'jotai';
 
-import atomConfigs from '../lib/atomConfigs';
-import BitIntWrapper, { createBitWrapper } from '../lib/BitIntWrapper';
-import BitDisplay from './BitDisplay';
-import { IBitInputProps } from '../../types';
+import { IBitInputProps } from '../../../types';
+import BitIntWrapper, { createBitWrapper } from '../../lib/BitIntWrapper';
+import atomConfigs from '../../lib/atomConfigs';
+import BitDisplay from '../BitDisplay';
 
 function InputWrapper({ name }: IBitInputProps) {
   const [activeInput, setActiveInput] = useAtom(atomConfigs.activeInputAtom);
@@ -47,7 +47,7 @@ function InputWrapper({ name }: IBitInputProps) {
               type='number'
               value={atomValue instanceof BitIntWrapper ? atomValue.toInt() : 0}
               onChange={handleChange}
-              className='text-shellbg w-full border-none rounded bits focus:outline-none focus:border'
+              className='text-shellbg pr-0 w-full border-none rounded bits focus:outline-none focus:border'
             />
           </label>
         ) : (
