@@ -1,4 +1,4 @@
-import BitControls from './BitControls';
+import BitInputControls from './BitInputControls';
 import Introduction from './Introduction';
 
 function InputShell() {
@@ -6,7 +6,7 @@ function InputShell() {
     <section className='h-[60svh] bits z-20 mt-14'>
       <div className='h-full p-4 mt-8'>
         <Introduction />
-        <BitControls />
+        <BitInputControls />
       </div>
     </section>
   );

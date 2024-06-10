@@ -1,7 +1,7 @@
 import InputWrapper from './InputWrapper';
 import OperationButtons from './OperationButtons';
 
-const BitControls = () => (
+const BitInputControls = () => (
   <div className=' flex flex-col justify-between items-center text-xl md:text-3xl md:flex-row'>
     <section className=''>
       <InputWrapper name='value' />
@@ -17,4 +17,4 @@ const BitControls = () => (
   </div>
 );
 
-export default BitControls;
+export default BitInputControls;

@@ -15,17 +15,19 @@ function OperationButtons() {
     const buttonStack = [];
     for (const [key, symbol] of Object.entries(BitOperationSymbols)) {
       buttonStack.push(
-        <button
-          onClick={handleClick}
-          name={key}
-          className={`fixed-btn bg-transparent border-0 rounded px-2 py-1 ${
-            operator == symbol
-              ? 'text-shellgreen backdrop-opacity-20 cursor-default'
-              : 'text-white shadow-neutral-600 text-xl md:text-3xl shadow-md hover:opacity-80 hover:font-bold'
-          }`}
-        >
-          {operator == symbol ? key : symbol}
-        </button>
+        <article className='fixed-btn' key={key}>
+          <button
+            onClick={handleClick}
+            name={key}
+            className={`size-full bg-transparent border-0 rounded ${
+              operator == symbol
+                ? 'text-shellgreen backdrop-opacity-20 cursor-default'
+                : 'text-white px-2 py-1 shadow-neutral-600 text-xl md:text-3xl shadow-md hover:opacity-80 hover:font-bold'
+            }`}
+          >
+            {operator == symbol ? key : symbol}
+          </button>
+        </article>
       );
     }
     return buttonStack.map((element: JSX.Element) => <>{element}</>);
