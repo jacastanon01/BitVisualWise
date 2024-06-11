@@ -1,16 +1,22 @@
 # BitVisualWise
 
-Site built to help visualize various bitwise operations. This site was built using bitwise operations, each bit of the integer can be checked, turned on (or turned off) easily and quickly.
+<img width="1295" alt="Screenshot 2024-06-11 at 4 23 38 PM" src="https://github.com/jacastanon01/BitVisualWise/assets/24418510/807de1a6-c165-4c95-a568-ea7d42ca971f">
+
+## What it does
+
+This site allows the user to enter an integer and then see the binary representation of that number. They can then see the result of certain operations in binary by pressing the operand button.
+
+## How I built it
+
+This site was built with ReactJS using the vite-react-ts template.
 
 ## Inspiration
 
 ### Background
 
-Since beginning my journey to understand more about programming fundamentals, I had always been confounded by how bits are able to represent large amounts of data. How can a sequence of bytes (8 bits) represent numbers, certain character encodings, and even images to transfer to the computer.
-
 I first encountered how to use bitwise operations in python from [boot.dev](http://boot.dev) where the lesson was to shift certain bits to ensure the correct user was given access. This was my first time learning about binary numbers and really understanding how a bunch of 1's and 0's can be grouped together to make magic happen.
 
-I have a habit of being overly clever to the point of redudancy. "You could use bit shifting and the AND operand to get all the even numbers in an array!" I said to myself, but it's much simpler and readable to just use a modulo operator or simple floor division. However, bitwise operations are essential to know if you enjoy feeling like a true hackerman. So, after learning how to use bitwise operations in python, I wanted to build a site that would help me understand and visualize how this works.
+I have a habit of over-doing things to the point of redudancy. "You could use bit shifting and the AND operand to get all the even numbers in an array!", I said to myself, but it's much simpler and readable to just use a modulo operator or simple floor division. However, bitwise operations are essential to know if you enjoy feeling like a true hackerman. So, after learning how to use bitwise operations in python, I wanted to build a site that would help me understand and visualize how this works.
 
 ### The question that sparked an interest
 
@@ -94,12 +100,6 @@ The question asks to create a generic class that will take in an int and create 
         return self.value.bit_length()
 ```
 
-The idea of iterating through the bits of any value was fascinating to me and I knew this would be a great foundation for visualizing bitwise operations. So I went back to my trusty friend javascript to recreate this class and bring this idea to the web.
+The idea of iterating through the bits of any integer was fascinating to me and I knew this would be a great foundation for visualizing bitwise operations. So I went back to my trusty friend javascript to recreate this class and bring this idea to the web.
 
-## What it does
 
-This site allows the user to enter an integer and then see the binary representation of that number and also be able to toggle each bit of the integer by shifting or performing bitwise operations.
-
-## How I built it
-
-This site was built with ReactJS using the vite-react-ts template.
