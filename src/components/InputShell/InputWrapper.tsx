@@ -70,7 +70,7 @@ function InputWrapper({ name }: IBitInputProps) {
           </label>
         ) : (
           <div>
-            <ByteDisplay className='text-3xl' valueToConvert={atomValue} />
+            <ByteDisplay className='md:text-3xl' valueToConvert={atomValue} />
           </div>
         )}
       </div>

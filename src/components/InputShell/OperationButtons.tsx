@@ -28,7 +28,7 @@ function OperationButtons() {
           className={`size-full bg-transparent border-0 rounded ${
             operator == symbol
               ? 'text-shellgreen backdrop-opacity-20 cursor-default'
-              : 'text-white px-2 py-1 shadow-neutral-600 text-xl md:text-2xl shadow-md hover:opacity-80'
+              : 'text-white px-2 py-1 shadow-neutral-600 text-lg md:text-2xl shadow-md hover:opacity-80'
           }`}
         >
           {operator == symbol ? symbol : key}
@@ -43,7 +43,7 @@ function OperationButtons() {
   };
 
   return (
-    <section className='flex justify-center items-center gap-2'>
+    <section className='flex justify-center items-center md:gap-2'>
       {generateButtons()}
     </section>
   );
