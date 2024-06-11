@@ -1,13 +1,10 @@
 const Introduction = () => (
   <p className='leading-normal tracking-tight text-wrap text-sm md:text-base'>
-    Below is an expression that uses bitwise operations. Bitwise operations are
-    performed on the binary representation of a number. This means that you can
-    only use numbers between 0 and 1. To understand what is going on here,
-    let&apos;s enter 2 as the first value, and 1 as the second. Now shift left{' '}
-    <code> 2 &lt;&lt; 1</code> What you just did was shift the first value (2) 1
-    place to the left, resulting in the the number (4). Take this result and put
-    it in the first entry and shift one place left again. As our one moves left,
-    our result doubles. Now use the and operand <code>8 &amp;&amp; 1</code>
+    Below are two bytes and an operand. A byte is represented by 8 bits that are
+    read from right to left. Bitwise operations are performed on the binary
+    representation of a number. Our byte starts at 1 and goes all the way up to
+    the 8th bit, which is 128 because it is the 8th power of 2. In this demo, I
+    am using one's complement so that the range of our input is from -1 to 128.{' '}
   </p>
 );
 

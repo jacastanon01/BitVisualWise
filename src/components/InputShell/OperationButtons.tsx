@@ -28,10 +28,10 @@ function OperationButtons() {
           className={`size-full bg-transparent border-0 rounded ${
             operator == symbol
               ? 'text-shellgreen backdrop-opacity-20 cursor-default'
-              : 'text-white px-2 py-1 shadow-neutral-600 text-xl md:text-2xl shadow-md hover:opacity-80 hover:font-bold'
+              : 'text-white px-2 py-1 shadow-neutral-600 text-xl md:text-2xl shadow-md hover:opacity-80'
           }`}
         >
-          {operator == symbol ? key : symbol}
+          {operator == symbol ? symbol : key}
         </button>
       );
     }
