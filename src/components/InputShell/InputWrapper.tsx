@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 
-import { IBitInputProps } from 'types';
+import { IBitInputProps } from 'types/';
 import BitIntWrapper, { createBitWrapper } from '@/lib/BitIntWrapper';
 import atomConfigs from '@/lib/atomConfigs';
 import ByteDisplay from './ByteDisplay';
