@@ -3,17 +3,13 @@ import React from 'react';
 
 import atom_configs from '@/lib/atomConfigs';
 import { BitOperationSymbols } from 'types/index.ts';
-import atomConfigs from '@/lib/atomConfigs';
 
 function OperationButtons() {
-  const [value] = useAtom(atomConfigs.valueAtom);
-  const [other] = useAtom(atomConfigs.otherValueAtom);
   const [operator, setOperator] = useAtom(atom_configs.operatorAtom);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const key = e.currentTarget.name as keyof typeof BitOperationSymbols;
     setOperator(BitOperationSymbols[key]);
-    if (!value || !other || !operator) return;
   };
 
   const generateButtons = (): Array<JSX.Element> => {
