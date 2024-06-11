@@ -46,7 +46,7 @@ function InputWrapper({ name }: IBitInputProps) {
   const handleBlur = () => setActiveInput(null);
 
   return (
-    <div className=' md:max-w-48'>
+    <div className='flex flex-shrink-0'>
       <div onClick={handleFocus} className='flex items-center'>
         {activeInput?.name == name ? (
           <label htmlFor={name}>
@@ -65,7 +65,7 @@ function InputWrapper({ name }: IBitInputProps) {
                   : createBitWrapper(0).toInt()
               }
               onChange={handleChange}
-              className='text-shellbg pr-0 w-full border-none rounded bits focus:outline-none focus:border'
+              className='text-shellbg pr-0 border-none rounded bits focus:outline-none focus:border'
             />
           </label>
         ) : (
