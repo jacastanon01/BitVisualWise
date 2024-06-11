@@ -17,7 +17,7 @@ function InputWrapper({ name }: IBitInputProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value.trim();
-    console.log({ newValue });
+    // ? maybe debounce
     if (newValue === '') {
       if (activeInput?.name === name) {
         if (name === 'value') {
@@ -54,7 +54,7 @@ function InputWrapper({ name }: IBitInputProps) {
               autoFocus
               // onKeyUp={(e) => console.log(e.key)}
               name={name}
-              min={-127}
+              min={-1}
               max={128}
               onClick={handleFocus}
               onBlur={handleBlur}
@@ -70,7 +70,7 @@ function InputWrapper({ name }: IBitInputProps) {
           </label>
         ) : (
           <div>
-            <ByteDisplay valueToConvert={atomValue} />
+            <ByteDisplay className='text-3xl' valueToConvert={atomValue} />
           </div>
         )}
       </div>
