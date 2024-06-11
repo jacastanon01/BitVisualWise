@@ -51,7 +51,8 @@ function InputWrapper({ name }: IBitInputProps) {
         {activeInput?.name == name ? (
           <label htmlFor={name}>
             <input
-              onKeyUp={(e) => console.log(e.key)}
+              autoFocus
+              // onKeyUp={(e) => console.log(e.key)}
               name={name}
               min={-127}
               max={128}

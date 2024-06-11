@@ -3,7 +3,7 @@ import OperationButtons from './OperationButtons';
 
 const BitInputControls = () => (
   <div className='mt-6 flex flex-col justify-between items-center text-xl md:text-3xl md:flex-row'>
-    <section className=''>
+    <section>
       <InputWrapper name='value' />
     </section>
 
@@ -11,7 +11,7 @@ const BitInputControls = () => (
       <OperationButtons />
     </section>
 
-    <section className=''>
+    <section>
       <InputWrapper name='otherValue' />
     </section>
   </div>

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  background-color: black;
+  background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
   font-family: 'Ubuntu Mono', 'monospace', 'Inter';
   --primary-color: rgba();
   background-color: #2d2d2d;
