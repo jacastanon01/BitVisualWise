@@ -1,7 +1,7 @@
 import InputShell from '../InputShell';
-import Title from './Title';
+import Title from '../Title';
 
-const BitwiseVisualizer = () => (
+const Home = () => (
   <>
     <main className='font-ubuntu mb-4 overflow-hidden'>
       <Title />
@@ -10,4 +10,4 @@ const BitwiseVisualizer = () => (
   </>
 );
 
-export default BitwiseVisualizer;
+export default Home;

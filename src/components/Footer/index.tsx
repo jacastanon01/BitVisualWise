@@ -1,4 +1,4 @@
-import Anchor from './shared/Anchor';
+import Anchor from '../shared/Anchor';
 
 const Footer = () => (
   <footer className='fixed bottom-0 right-0 w-full font-mono'>
