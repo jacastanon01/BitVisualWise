@@ -21,10 +21,8 @@ function ResultByte() {
   }, [operator, value, other]);
 
   return (
-    <section className='mt-8 h-32 flex font-bold items-center justify-center text-3xl md:text-5xl'>
-      {/* <div className='size-full'> */}
+    <section className='mt-8 h-32 flex font-extrabold items-center justify-center text-3xl md:text-5xl'>
       <ByteDisplay valueToConvert={result} />
-      {/* </div> */}
     </section>
   );
 }
