@@ -6,9 +6,13 @@
 
 This site allows the user to enter an integer and then see the binary representation of that number. They can then see the result of certain operations in binary by pressing the operand button.
 
-## How I built it
+## Made with
 
-This site was built with ReactJS using the vite-react-ts template.
+- React
+- Typescript
+- TailwindCSS
+- Vite
+- Jotai
 
 ## Inspiration
 
@@ -101,5 +105,3 @@ The question asks to create a generic class that will take in an int and create 
 ```
 
 The idea of iterating through the bits of any integer was fascinating to me and I knew this would be a great foundation for visualizing bitwise operations. So I went back to my trusty friend javascript to recreate this class and bring this idea to the web.
-
-
