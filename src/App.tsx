@@ -1,5 +1,5 @@
-import BitwiseVisualizer from './components/BitwiseVisualizer';
 import Footer from './components/Footer';
+import BitwiseVisualizer from './components/TitleContent/BitwiseVisualizer';
 
 function App() {
   return (
