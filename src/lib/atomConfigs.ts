@@ -7,7 +7,7 @@ const valueAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));
 const otherValueAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));
 const resultAtom = atom<BitIntWrapper | null>(new BitIntWrapper(0));
 
-const operatorAtom = atom<BitOperationSymbols | null>(BitOperationSymbols.AND);
+const operatorAtom = atom<BitOperationSymbols | null>(null);
 
 const activeInputAtom = atom<IBitInputProps | null>(null);
 
