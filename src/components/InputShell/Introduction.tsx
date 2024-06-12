@@ -3,7 +3,7 @@ import Anchor from '../shared/Anchor';
 const Introduction = () => (
   <p className='leading-normal tracking-tight text-wrap text-sm md:text-base'>
     Below are two bytes, or 16 bits, and an operand. Enter two numbers numbers
-    and click and operation{' '}
+    and click an operation.{' '}
     <Anchor href='https://en.wikipedia.org/wiki/Bitwise_operation'>
       Bitwise operations
     </Anchor>{' '}
