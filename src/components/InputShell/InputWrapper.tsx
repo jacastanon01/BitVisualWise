@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai';
 
-import { IBitInputProps } from 'types/';
 import BitIntWrapper, { createBitWrapper } from '@/lib/BitIntWrapper';
 import atomConfigs from '@/lib/atomConfigs';
+import { IBitInputProps } from 'types/';
 import ByteDisplay from './ByteDisplay';
 
 function InputWrapper({ name }: IBitInputProps) {
@@ -46,37 +46,35 @@ function InputWrapper({ name }: IBitInputProps) {
   const handleBlur = () => setActiveInput(null);
 
   return (
-    <div className='flex flex-shrink-0'>
-      <div onClick={handleFocus} className='flex items-center'>
-        {activeInput?.name == name ? (
-          <label htmlFor={name}>
-            <input
-              autoFocus
-              // onKeyUp={(e) => console.log(e.key)}
-              name={name}
-              min={-1}
-              max={128}
-              onClick={handleFocus}
-              onBlur={handleBlur}
-              type='text'
-              value={
-                atomValue instanceof BitIntWrapper
-                  ? atomValue.toInt()
-                  : createBitWrapper(0).toInt()
-              }
-              onChange={handleChange}
-              className='text-shellbg pr-0 border-none rounded bits focus:outline-none focus:border'
-            />
-          </label>
-        ) : (
-          <div>
-            <ByteDisplay
-              className='text-xl md:text-3xl'
-              valueToConvert={atomValue}
-            />
-          </div>
-        )}
-      </div>
+    <div
+      onClick={handleFocus}
+      className='flex justify-center items-center text-xl md:text-3xl hover:cursor-text'
+    >
+      {activeInput?.name == name ? (
+        <label className='flex lg:w-1/2' htmlFor={name}>
+          <input
+            onClick={handleFocus}
+            aria-current={true}
+            autoFocus
+            name={name}
+            min={-1}
+            max={128}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            type='text'
+            value={
+              atomValue instanceof BitIntWrapper
+                ? atomValue.toInt()
+                : createBitWrapper(0).toInt()
+            }
+            className='bits flex size-full border-none rounded focus:outline-none'
+          />
+        </label>
+      ) : (
+        <button>
+          <ByteDisplay className='focus:hidden' valueToConvert={atomValue} />
+        </button>
+      )}
     </div>
   );
 }

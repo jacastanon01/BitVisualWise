@@ -21,8 +21,8 @@ function ResultByte() {
   }, [operator, value, other]);
 
   return (
-    <section className='mt-8 h-32 flex font-extrabold items-center justify-center text-3xl md:text-5xl'>
-      <ByteDisplay valueToConvert={result} />
+    <section className='flex font-extrabold items-center justify-center'>
+      <ByteDisplay className='text-3xl md:text-5xl' valueToConvert={result} />
     </section>
   );
 }
