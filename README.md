@@ -14,15 +14,7 @@ This site allows the user to enter an integer and then see the binary representa
 - Vite
 - Jotai
 
-## Inspiration
-
-### Background
-
-I first encountered how to use bitwise operations in python from [boot.dev](http://boot.dev) where the lesson was to shift certain bits to ensure the correct user was given access. This was my first time learning about binary numbers and really understanding how a bunch of 1's and 0's can be grouped together to make magic happen.
-
-I have a habit of over-doing things to the point of redudancy. "You could use bit shifting and the AND operand to get all the even numbers in an array!", I said to myself, but it's much simpler and readable to just use a modulo operator or simple floor division. However, bitwise operations are essential to know if you enjoy feeling like a true hackerman. So, after learning how to use bitwise operations in python, I wanted to build a site that would help me understand and visualize how this works.
-
-### The question that sparked an interest
+## The question that sparked an interest
 
 > You saw how the simple int type in Python can be used to represent a bit string.Write an ergonomic wrapper around int that can be used generically as a sequence of bits (make it iterable and implement **getitem**()). Reimplement CompressedGene, using the wrapper.
 
