@@ -2,7 +2,7 @@ import InputShell from '../InputShell';
 import Title from '../Title';
 
 const Home = () => (
-  <main className='relative font-ubuntu mb-16 overflow-hidden'>
+  <main className='relative font-ubuntu overflow-hidden'>
     <Title />
     <InputShell />
   </main>

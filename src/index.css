@@ -16,6 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  height: 100dvh;
+}
+
 input {
   border: 0;
   outline: 0;
