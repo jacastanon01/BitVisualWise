@@ -80,10 +80,6 @@ export function performBitOperation(
   value2: BitIntWrapper
 ): BitIntWrapper {
   switch (operator) {
-    case BitOperationSymbols.L:
-      return value1.lshift(value2);
-    case BitOperationSymbols.R:
-      return value1.rshift(value2);
     case BitOperationSymbols.AND:
       return value1.and(value2);
     case BitOperationSymbols.OR:
