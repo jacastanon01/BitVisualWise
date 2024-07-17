@@ -48,7 +48,7 @@ function InputWrapper({ name }: IBitInputProps) {
   return (
     <div
       onClick={handleFocus}
-      className='flex justify-center items-center text-xl md:text-3xl hover:cursor-text'
+      className='flex justify-center items-center text-3xl md:text-5xl hover:cursor-text'
     >
       {activeInput?.name == name ? (
         <label className='flex lg:w-1/2' htmlFor={name}>
