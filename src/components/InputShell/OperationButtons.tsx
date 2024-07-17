@@ -23,7 +23,7 @@ function OperationButtons() {
           name={key}
           className={`size-full bg-transparent border-0 rounded ${
             operator == symbol
-              ? 'text-shellgreen backdrop-opacity-20 cursor-default'
+              ? 'text-shellgreen backdrop-opacity-20 cursor-default text-xl md:text-3xl'
               : 'text-white px-2 py-1 shadow shadow-neutral-600 text-base sm:text-lg lg:text-2xl hover:opacity-80'
           }`}
         >
