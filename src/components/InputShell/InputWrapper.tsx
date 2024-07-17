@@ -52,7 +52,7 @@ function InputWrapper({ name }: IBitInputProps) {
       className='flex justify-center items-center text-3xl md:text-5xl hover:cursor-text'
     >
       {activeInput?.name == name ? (
-        <label className='flex lg:w-1/2' htmlFor={name}>
+        <label className='w-1/2' htmlFor={name}>
           <input
             onClick={handleFocus}
             aria-current={true}
@@ -68,7 +68,7 @@ function InputWrapper({ name }: IBitInputProps) {
                 ? atomValue.toInt()
                 : createBitWrapper(0).toInt()
             }
-            className='bits flex size-full border-none rounded focus:outline-none'
+            className='bits text-2xl md:text-4xl border-none rounded focus:outline-none'
           />
         </label>
       ) : (
