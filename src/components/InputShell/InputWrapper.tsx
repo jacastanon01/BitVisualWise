@@ -28,6 +28,7 @@ function InputWrapper({ name }: IBitInputProps) {
       }
     } else {
       const parsedValue = parseInt(newValue, 10);
+      if (parsedValue > 255) return;
 
       if (!isNaN(parsedValue) && activeInput?.name == name) {
         const bitWrapperObj = createBitWrapper(parsedValue);
