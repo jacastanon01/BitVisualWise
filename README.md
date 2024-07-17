@@ -61,39 +61,4 @@ def decompress(bit_string: int) -> str:
     return gene[::-1]
 ```
 
-The question asks to create a generic class that will take in an int and create an iterable. This was my solution:
-
-```python
-    class BitWrapper:
-    def __init__(self, value: int = 0):
-        self.value = value
-
-    def __iter__(self):
-        return (int(bit) for bit in bin(self.value)[2:])
-
-    def __getitem__(self, index: int) -> int:
-        bin_str = bin(self.value)[2:]
-        if index < 0 or index >= len(bin_str):
-            raise IndexError("Bit index out of range")
-        return int(bin_str[index])
-
-    def __repr__(self) -> str:
-        return f"BitWrapper({bin(self.value)})"
-
-    def __int__(self):
-        return self.value
-
-    def __or__(self, other):
-        return BitWrapper(self.value | other.value)
-
-    def __lshift__(self, other):
-        return BitWrapper(self.value << other)
-
-    def __rshift__(self, other):
-        return BitWrapper(self.value >> other)
-
-    def bit_length(self):
-        return self.value.bit_length()
-```
-
-The idea of iterating through the bits of any integer was fascinating to me and I knew this would be a great foundation for visualizing bitwise operations. So I went back to my trusty friend javascript to recreate this class and bring this idea to the web.
+This got me interested in creating a site that can visualize how this operation was able to take place
